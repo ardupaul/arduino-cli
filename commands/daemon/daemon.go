@@ -154,11 +154,6 @@ func (s *ArduinoCoreServerImpl) Version(ctx context.Context, req *rpc.VersionReq
 	return &rpc.VersionResp{Version: s.VersionString}, nil
 }
 
-// LoadSketch FIXMEDOC
-func (s *ArduinoCoreServerImpl) LoadSketch(ctx context.Context, req *rpc.LoadSketchReq) (*rpc.LoadSketchResp, error) {
-	return commands.LoadSketch(ctx, req)
-}
-
 // Compile FIXMEDOC
 func (s *ArduinoCoreServerImpl) Compile(req *rpc.CompileReq, stream rpc.ArduinoCore_CompileServer) error {
 	resp, err := compile.Compile(
